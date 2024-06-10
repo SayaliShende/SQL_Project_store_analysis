@@ -235,7 +235,7 @@ This relationship indicates that a single product can be part of the inventory i
     GROUP BY s.store_id, st.store_name
     ORDER BY profit DESC;
 
-<img src="https://github.com/SayaliShende/SQL_Project_store_analysis/blob/main/query_results/Query%204.png" alt="Entity Relationship Diagram" width="400" height="300">
+<img src="https://github.com/SayaliShende/SQL_Project_store_analysis/blob/main/query_results/Query%204.png" alt="Entity Relationship Diagram" width="400" height="200">
 
 ### 5. Payment Method Analysis by store
 
@@ -257,7 +257,7 @@ This relationship indicates that a single product can be part of the inventory i
     GROUP BY payment_method
     ORDER BY total_sales DESC;
 
-<img src="https://github.com/SayaliShende/SQL_Project_store_analysis/blob/main/query_results/query%206.png" alt="Entity Relationship Diagram" width="400" height="250">
+<img src="https://github.com/SayaliShende/SQL_Project_store_analysis/blob/main/query_results/query%206.png" alt="Entity Relationship Diagram" width="350" height="200">
 
 ### Conclusion:
 Relational Database Management Systems (RDBMS) are indispensable for managing modern databases, providing a structured and organized approach that ensures data integrity, security, and scalability. The use of SQL, a powerful query language designed for RDBMS, enables efficient data retrieval, manipulation, and analysis. This capability is crucial for businesses and applications that rely on precise and reliable data, particularly in sectors like finance and retail, where decision-making depends heavily on accurate information.
