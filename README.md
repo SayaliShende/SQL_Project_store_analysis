@@ -207,7 +207,7 @@ This relationship indicates that a single product can be part of the inventory i
     GROUP BY p.product_id, p.product_name, s.store_id
     ORDER BY s.store_id, sale_rank;
 
-<img src="(https://github.com/SayaliShende/SQL_Project_store_analysis/blob/main/query_results/Query%202.png)" alt="Entity Relationship Diagram" width="500" height="300">
+<img src="https://github.com/SayaliShende/SQL_Project_store_analysis/blob/main/query_results/Query%201.png" alt="Entity Relationship Diagram" width="500" height="300">
 
 ### 2. Total sales by store
     SELECT Sales.store_id, Stores.store_name, SUM(Sales.total_amount) AS total_sales
@@ -216,7 +216,7 @@ This relationship indicates that a single product can be part of the inventory i
     GROUP BY store_id, store_name
     ORDER BY total_sales DESC;
 
-<img src="https://github.com/SayaliShende/SQL_Project_store_analysis/blob/main/query_results/Query%202.png" alt="Entity Relationship Diagram" width="500" height="300">
+<img src="https://github.com/SayaliShende/SQL_Project_store_analysis/blob/main/query_results/Query%202_.png" alt="Entity Relationship Diagram" width="500" height="300">
 
 ### 3. Sales Trends Over Time to understand the daily sales
     SELECT sale_date, SUM(total_amount) AS daily_sales
