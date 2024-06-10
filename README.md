@@ -140,6 +140,8 @@ Business Objective: The primary goal is to develop a robust database system to t
 	payment_method,
 	transaction_date
 
+## Entity Relationship Diagram:
+
 <img src="https://github.com/SayaliShende/SQL_Project_store_analysis/blob/main/ERD/SQL%20ERD%20PROJECT%20-%20Page%202.png" alt="Entity Relationship Diagram" width="700" height="500">
 
 ### ERD Relationships:
