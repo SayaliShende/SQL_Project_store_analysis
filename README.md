@@ -10,10 +10,11 @@
 7. [Business Rules](Business-Rules)
 8. [Entity-Relationship Diagram](Entity-Relationship-Diagram)
 9. [Designing a Database schema using MySql](Designing-a-Database-schema-using-MySql)
-10.[Business Problems analysis](Business-Problems-analysis)
-11.[Conclusion](Conclusion)
-12.[Recommendations](Recommendations)
-13.[References](References)
+
+10. [Business Problems analysis](Business-Problems-analysis)
+11. [Conclusion](Conclusion)
+12. [Recommendations](Recommendations)
+13. [References](References)
 
 The project provides an understanding of relational database management and demonstrate the practical application of SQL in addressing real-world queries related to monitoring and analyzing the sales of newly established mini stores for "XYZ Ltd."
 
