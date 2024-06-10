@@ -1,33 +1,49 @@
 # NEW_STORE_ANALYSIS_FOR_RETAIL_GIANT_XYZltd.
+
+### Contents
+1. [Project Objective](project-objective)
+2. [Business Problem](Business-Problem)
+3. [Business Objective](Business-Objective)
+4. [Project Scope and Features](Project-Scope-and-Features)
+5. [Database Schema](Database-Schema)
+6. [Business Understanding](Business-Understanding)
+7. [Business Rules](Business-Rules)
+8. [Entity-Relationship Diagram](Entity-Relationship-Diagram)
+9. [Designing a Database schema using MySql](Designing-a-Database-schema-using-MySql)
+10.[Business Problems analysis](Business-Problems-analysis)
+11.[Conclusion](Conclusion)
+12.[Recommendations](Recommendations)
+13.[References](References)
+
 The project provides an understanding of relational database management and demonstrate the practical application of SQL in addressing real-world queries related to monitoring and analyzing the sales of newly established mini stores for "XYZ Ltd."
 
 
-### Project Objective
+### 1. Project Objective
 The aim of this project is to provide an understanding of relational database management and demonstrate the practical application of SQL in addressing real-world queries related to monitoring and analyzing the sales of newly established mini stores for "XYZ Ltd."
 
-### Business Problem
+### 2. Business Problem
 "XYZ Ltd." is a retail giant operating grocery stores, e-commerce, and departmental stores. The company has recently set up mini stores focusing on groceries, fresh produce, dairy, and poultry items.
 
-### Objective:
+### 3. Business Objective:
 The company wants to develop a database to track and monitor the sales of these new mini stores to determine their profitability and inform the management if it is worth continuing to open such stores.
 
 As the designated Database Administrator, your role will be to design, implement, and manage the transaction database for these mini stores, providing insights into their sales performance.
-### Project Scope and Features
-#### 1.	Database Design:
+### 4. Project Scope and Features
+#### 4.1.	Database Design:
  Design a relational database schema to capture key entities and relationships related to the sales of mini stores.
  
  Key entities include: Products, Stores, Inventory, Sales, and Transactions.
-#### 2.	Sales Monitoring:
+#### 4.2.	Sales Monitoring:
  Record sales transactions for mini stores.
 
 Generate reports on total sales, top-selling products, and sales trends over time.
-#### 3.	Profitability Analysis:
+#### 4.3.	Profitability Analysis:
  Calculate the profitability of each mini store.
  
  Compare sales performance across different locations.
 
-### Database Schema: 
-### Entities and Relationships:
+### 5. Database Schema: 
+#### 5.1 Entities and Relationships:
 •	Products: product_id, product_name, category, price
 
 •	Stores: store_id, store_name, location
@@ -39,7 +55,7 @@ Generate reports on total sales, top-selling products, and sales trends over tim
 •	Transactions: transaction_id, sale_id, payment_method, transaction_date
 
 
-#### Steps to Implement the Project
+#### 5.2 Steps to Implement the Project
 
 1.	Requirements Gathering:
       Stakeholders analysis to understand their data needs and reporting requirements.
@@ -61,11 +77,12 @@ Generate reports on total sales, top-selling products, and sales trends over tim
       Providing stakeholders with access to real-time data and insights
 
 
-### Business Understanding
-Business Context: "XYZ Ltd." is a retail giant operating in various segments, including grocery stores, e-commerce, and departmental stores. The company has recently expanded its operations by setting up mini stores that focus specifically on groceries, fresh produce, dairy, and poultry items. These mini stores are intended to cater to local neighborhoods, providing convenient access to essential items.
-Business Objective: The primary goal is to develop a robust database system to track and monitor the sales performance of these mini stores. This system will help the management analyze whether the new mini stores are profitable and determine if it is worth continuing and expanding this business model.
+### 6. Business Understanding
+"XYZ Ltd." is a retail giant operating in various segments, including grocery stores, e-commerce, and departmental stores. The company has recently expanded its operations by setting up mini stores that focus specifically on groceries, fresh produce, dairy, and poultry items. These mini stores are intended to cater to local neighborhoods, providing convenient access to essential items.
 
-### Business Rules
+The primary goal is to develop a robust database system to track and monitor the sales performance of these mini stores. This system will help the management analyze whether the new mini stores are profitable and determine if it is worth continuing and expanding this business model.
+
+### 7. Business Rules
 1.	Product Management:
 
 	 -Each product must have a unique identifier (product_id).
@@ -110,8 +127,8 @@ Business Objective: The primary goal is to develop a robust database system to t
 	 -Reports must be generated for different time periods (daily, weekly, monthly).
 
 
-### Entity-Relationship Diagram (ERD) Analysis
-#### Entities and Attributes:
+### 8. Entity-Relationship Diagram (ERD) Analysis
+#### 8.1 Entities and Attributes:
 1.	Products:
 	product_id (Primary Key),
 	product_name,
@@ -140,11 +157,11 @@ Business Objective: The primary goal is to develop a robust database system to t
 	payment_method,
 	transaction_date
 
-## Entity Relationship Diagram:
+### Entity Relationship Diagram:
 
 <img src="https://github.com/SayaliShende/SQL_Project_store_analysis/blob/main/ERD/SQL%20ERD%20PROJECT%20-%20Page%202.png" alt="Entity Relationship Diagram" width="700" height="500">
 
-### ERD Relationships:
+#### 8.2 ERD Relationships:
 #### 1.	Store to Sales (One-to-Many Relationship): 
 In this relationship, a single store can have many sales transactions, demonstrating a one-to-many relationship. This means that each store, such as Mini Store A, can handle multiple sales transactions over time. Each sale is uniquely associated with one store, ensuring that the sales data can be traced back to the specific location where the sale occurred. This relationship allows the company to analyze sales performance by store, monitor store-level sales trends, and make informed decisions about store operations and strategies.
 #### 2. Product to Sales (One-to-Many Relationship)
@@ -156,7 +173,7 @@ In this relationship, a single store can have multiple inventory records, each r
 #### 5. Product to Inventory (One-to-Many Relationship)
 This relationship indicates that a single product can be part of the inventory in multiple stores, again forming a one-to-many relationship. For instance, the product 'Milk' can be stocked in Mini Store A, Mini Store B, and Mini Store C. Each inventory record is tied to a specific product and a specific store, allowing the company to track where each product is available and in what quantities. This relationship is vital for maintaining optimal inventory levels across all stores, ensuring that products are available where needed, and supporting decisions about product distribution and stock management across the mini-store network.
 
-### Designing a Database schema using MySql
+### 9. Designing a Database schema using MySql
 
      # Creating a Database for XYZ ltd
           CREATE DATABASE sql_project
@@ -222,7 +239,8 @@ This relationship indicates that a single product can be part of the inventory i
         );
 
 
-### Solving the business problem by analysing few business related questions
+### 10. Business Problems analysis
+#### Solving the business problem by analysing few business related questions
 ### 1. Top selling products per store 
 
     SELECT p.product_id, p.product_name, s.store_id, SUM(s.quantity_sold) AS units_sold,
@@ -284,12 +302,12 @@ This relationship indicates that a single product can be part of the inventory i
 
 <img src="https://github.com/SayaliShende/SQL_Project_store_analysis/blob/main/query_results/query%206.png" alt="Entity Relationship Diagram" width="500" height="150">
 
-### Conclusion:
+### 11. Conclusion:
 Relational Database Management Systems (RDBMS) are indispensable for managing modern databases, providing a structured and organized approach that ensures data integrity, security, and scalability. The use of SQL, a powerful query language designed for RDBMS, enables efficient data retrieval, manipulation, and analysis. This capability is crucial for businesses and applications that rely on precise and reliable data, particularly in sectors like finance and retail, where decision-making depends heavily on accurate information.
 
 The analysis of XYZ Ltd.'s mini stores has revealed several key insights. Eggs and apples have emerged as the top-selling products across the stores, indicating a strong customer preference. The Neighbourhood A store stands out as the highest revenue generator, suggesting it has a significant customer base or purchasing power. Initial sales trends for May show positive growth, although a more extended period of data collection is necessary to draw substantial conclusions. Profitability analysis indicates that the stores are currently at break-even, and payment method analysis shows a balanced sales of credit cards, debit cards, and cash across stores with credit cards being the most frequently used transaction method.
 
-### Recommendations:
+### 12. Recommendations:
 1.Product Strategy: Given the high sales of eggs and apples, increase inventory levels for these items and consider targeted promotions to maximize revenue. This focus on popular products can help drive sales and customer satisfaction.
 
 2.Store-Specific Investments: Invest more in marketing and customer experience enhancements at the Neighbourhood A store, which has demonstrated the highest sales performance. This store can serve as a model for other locations, potentially driving overall business growth.
@@ -302,7 +320,7 @@ The analysis of XYZ Ltd.'s mini stores has revealed several key insights. Eggs a
 
 Implementing these recommendations will help XYZ Ltd. better understand customer preferences, optimize operations, and ultimately drive business growth and profitability. Continuous data analysis and informed decision-making will be key to the long-term success of the mini stores.
 
-### References:
+### 13.References:
 1. Retrieved from: Created in Lucidchart, www.lucidchart.com
 2. Duong, E. (2023). Critical concepts in relational database — Data science journey. Medium. Retrieved June 10, 2024, from https://medium.com/@ethan.duong1120/8-critical-concepts-in-relational-database-80c74aa15e9c 
 3. Retrieved from: Normalization, https://www.studytonight.com/dbms/database-normalization.php
