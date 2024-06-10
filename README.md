@@ -207,6 +207,8 @@ This relationship indicates that a single product can be part of the inventory i
     GROUP BY p.product_id, p.product_name, s.store_id
     ORDER BY s.store_id, sale_rank;
 
+<img src="(https://github.com/SayaliShende/SQL_Project_store_analysis/blob/main/query_results/Query%201.png)" alt="Entity Relationship Diagram" width="500" height="400">
+
 ### 2. Total sales by store
     SELECT Sales.store_id, Stores.store_name, SUM(Sales.total_amount) AS total_sales
     FROM Sales
@@ -214,11 +216,16 @@ This relationship indicates that a single product can be part of the inventory i
     GROUP BY store_id, store_name
     ORDER BY total_sales DESC;
 
+<img src="https://github.com/SayaliShende/SQL_Project_store_analysis/blob/main/query_results/Query%202.png" alt="Entity Relationship Diagram" width="500" height="400">
+
 ### 3. Sales Trends Over Time to understand the daily sales
     SELECT sale_date, SUM(total_amount) AS daily_sales
     FROM Sales
     GROUP BY sale_date
     ORDER BY sale_date;
+
+
+<img src="https://github.com/SayaliShende/SQL_Project_store_analysis/blob/main/query_results/Query%203.png" alt="Entity Relationship Diagram" width="500" height="400">
 
 ### 4. Profit Analysis for the stores
     SELECT st.store_name, p.category,  sum(s.total_amount) - sum(p.price * s.quantity_sold) as profit
@@ -227,6 +234,8 @@ This relationship indicates that a single product can be part of the inventory i
     LEFT JOIN stores st on st.store_id = s.store_id
     GROUP BY s.store_id, st.store_name
     ORDER BY profit DESC;
+
+<img src="https://github.com/SayaliShende/SQL_Project_store_analysis/blob/main/query_results/Query%204.png" alt="Entity Relationship Diagram" width="500" height="400">
 
 ### 5. Payment Method Analysis by store
 
@@ -239,12 +248,16 @@ This relationship indicates that a single product can be part of the inventory i
     GROUP BY Stores.store_id, Transactions.payment_method
     ORDER BY Stores.store_id, transaction_rank;
 
+<img src="https://github.com/SayaliShende/SQL_Project_store_analysis/blob/main/query_results/Query%205.png" alt="Entity Relationship Diagram" width="500" height="400">
+
 ### 6. Preferred Payment Method Analysis to understand the preferred payment methods
     SELECT payment_method, COUNT(*) AS transaction_count, SUM(total_amount) AS total_sales
     FROM Transactions
     JOIN Sales ON Transactions.sale_id = Sales.sale_id
     GROUP BY payment_method
     ORDER BY total_sales DESC;
+
+<img src="https://github.com/SayaliShende/SQL_Project_store_analysis/blob/main/query_results/query%206.png" alt="Entity Relationship Diagram" width="500" height="400">
 
 ### Conclusion:
 Relational Database Management Systems (RDBMS) are indispensable for managing modern databases, providing a structured and organized approach that ensures data integrity, security, and scalability. The use of SQL, a powerful query language designed for RDBMS, enables efficient data retrieval, manipulation, and analysis. This capability is crucial for businesses and applications that rely on precise and reliable data, particularly in sectors like finance and retail, where decision-making depends heavily on accurate information.
