@@ -1,12 +1,13 @@
-# SQL_Project_store_analysis
-The aim of this project is to provide an understanding of relational database management and demonstrate the practical application of SQL in addressing real-world queries related to monitoring and analyzing the sales of newly established mini stores for "XYZ Ltd."
 # NEW_STORE_ANALYSIS_FOR_RETAIL_GIANT_XYZltd.
+The project provides an understanding of relational database management and demonstrate the practical application of SQL in addressing real-world queries related to monitoring and analyzing the sales of newly established mini stores for "XYZ Ltd."
+
 
 #### Project Objective
 The aim of this project is to provide an understanding of relational database management and demonstrate the practical application of SQL in addressing real-world queries related to monitoring and analyzing the sales of newly established mini stores for "XYZ Ltd."
 
 #### Business Problem
 "XYZ Ltd." is a retail giant operating grocery stores, e-commerce, and departmental stores. The company has recently set up mini stores focusing on groceries, fresh produce, dairy, and poultry items.
+
 #### Objective:
 The company wants to develop a database to track and monitor the sales of these new mini stores to determine their profitability and inform the management if it is worth continuing to open such stores.
 
@@ -31,30 +32,31 @@ o	Compare sales performance across different locations.
 •	Transactions: transaction_id, sale_id, payment_method, transaction_date
 #### Steps to Implement the Project
 
-      1.	Requirements Gathering:
+1.	Requirements Gathering:
       Stakeholders analysis to understand their data needs and reporting requirements.
       Identify key metrics and performance indicators for sales monitoring and profitability analysis.
-      2.    Database Design:
+2.    Database Design:
       Creating an Entity-Relationship Diagram (ERD) to model the database structure.
       Define tables, primary keys, foreign keys, and relationships.
-      3.	Database Implementation:
+3.	Database Implementation:
       Using SQL to create the database schema based on the ERD.
       Populate the database with sample data for testing.
-      4.    Data Integration:
+4.    Data Integration:
       Developing scripts to import data from various sources into the database.
       Ensuring data consistency and integrity.
-      5.	Query Development:
+5.	Query Development:
       Writing SQL queries to extract and analyze data.
       Optimizing queries for performance.
-      6.	Reporting and Visualization:
+6.	Reporting and Visualization:
       Using tools like SQL Server Reporting Services (SSRS), Tableau, or Power BI to create reports and dashboards.
       Providing stakeholders with access to real-time data and insights
 
 
-#### Business Understanding
+### Business Understanding
 Business Context: "XYZ Ltd." is a retail giant operating in various segments, including grocery stores, e-commerce, and departmental stores. The company has recently expanded its operations by setting up mini stores that focus specifically on groceries, fresh produce, dairy, and poultry items. These mini stores are intended to cater to local neighborhoods, providing convenient access to essential items.
 Business Objective: The primary goal is to develop a robust database system to track and monitor the sales performance of these mini stores. This system will help the management analyze whether the new mini stores are profitable and determine if it is worth continuing and expanding this business model.
-#### Business Rules
+
+### Business Rules
 1.	Product Management:
 	 -Each product must have a unique identifier (product_id).
 	 -Products are categorized into distinct categories (e.g., groceries, fresh produce, dairy, poultry).
@@ -79,46 +81,141 @@ Business Objective: The primary goal is to develop a robust database system to t
 	 -Profitability reports must compare sales revenue against product costs to determine profit margins.
 	 -Reports must be generated for different time periods (daily, weekly, monthly).
 
-#### Entity-Relationship Diagram (ERD) Analysis
-Entities and Attributes:
+### Entity-Relationship Diagram (ERD) Analysis
+#### Entities and Attributes:
 1.	Products:
-	product_id (Primary Key)
-	product_name
-	category
+	product_id (Primary Key),
+	product_name,
+	category,
 	price
 2.	Stores:
-	store_id (Primary Key)
-	store_name
+	store_id (Primary Key),
+	store_name,
 	location
 3.	Inventory:
-	inventory_id (Primary Key)
-	store_id (Foreign Key)
-	product_id (Foreign Key)
-	stock_level
+	inventory_id (Primary Key),
+	store_id (Foreign Key),
+	product_id (Foreign Key),
+	stock_level,
 	reorder_level
 4.	Sales:
-	sale_id (Primary Key)
-	store_id (Foreign Key)
-	product_id (Foreign Key)
-	sale_date
-	quantity_sold
+	sale_id (Primary Key),
+	store_id (Foreign Key),
+	product_id (Foreign Key),
+	sale_date,
+	quantity_sold,
 	total_amount
 5.	Transactions:
-	transaction_id (Primary Key)
-	sale_id (Foreign Key)
-	payment_method
+	transaction_id (Primary Key),
+	sale_id (Foreign Key),
+	payment_method,
 	transaction_date
 
-#### ERD Relationships:
-##### 1.	Store to Sales (One-to-Many Relationship): 
+### ERD Relationships:
+#### 1.	Store to Sales (One-to-Many Relationship): 
 In this relationship, a single store can have many sales transactions, demonstrating a one-to-many relationship. This means that each store, such as Mini Store A, can handle multiple sales transactions over time. Each sale is uniquely associated with one store, ensuring that the sales data can be traced back to the specific location where the sale occurred. This relationship allows the company to analyze sales performance by store, monitor store-level sales trends, and make informed decisions about store operations and strategies.
-##### 2. Product to Sales (One-to-Many Relationship)
+#### 2. Product to Sales (One-to-Many Relationship)
 This relationship illustrates that a single product can appear in multiple sales transactions, highlighting another one-to-many relationship. For example, a product like 'Milk' can be sold multiple times across various transactions in different stores. Each sale record contains details about the product sold, making it possible to track the sales volume and revenue generated by each product. This relationship is crucial for inventory management, sales forecasting, and understanding product popularity, helping the company optimize product availability and pricing strategies.
-##### 3. Sale to Transaction (One-to-One Relationship)
+#### 3. Sale to Transaction (One-to-One Relationship)
 Here, the relationship between a sale and a transaction is one-to-one, meaning each sale transaction is linked to a single transaction record. This ensures that every sale has an associated transaction that includes payment details and the transaction date. For instance, a sale of 'Milk' on June 1 will have a corresponding transaction record detailing the payment method used and the exact date of the transaction. This relationship is essential for accurate financial tracking, auditing, and ensuring that all sales are properly recorded and accounted for in the financial system.
-##### 4. Store to Inventory (One-to-Many Relationship)
+#### 4. Store to Inventory (One-to-Many Relationship)
 In this relationship, a single store can have multiple inventory records, each representing different products, forming a one-to-many relationship. Each store, such as Mini Store A, maintains inventory records for various products like 'Milk', 'Eggs', 'Apples', etc. These records include information about stock levels and reorder points, enabling the store to manage its inventory effectively. This relationship is key to ensuring that stores are adequately stocked, preventing stockouts, and optimizing the replenishment process to meet customer demand efficiently.
-##### 5. Product to Inventory (One-to-Many Relationship)
+#### 5. Product to Inventory (One-to-Many Relationship)
 This relationship indicates that a single product can be part of the inventory in multiple stores, again forming a one-to-many relationship. For instance, the product 'Milk' can be stocked in Mini Store A, Mini Store B, and Mini Store C. Each inventory record is tied to a specific product and a specific store, allowing the company to track where each product is available and in what quantities. This relationship is vital for maintaining optimal inventory levels across all stores, ensuring that products are available where needed, and supporting decisions about product distribution and stock management across the mini-store network.
 
-#### Designing a Database schema using MySql
+### Designing a Database schema using MySql
+
+     # Creating a Database for XYZ ltd
+          CREATE DATABASE sql_project
+
+
+     # Create Products Table
+
+        CREATE TABLE Products 
+        (
+        product_id INT PRIMARY KEY,
+        product_name VARCHAR(255),
+        category VARCHAR(255),
+        price DECIMAL(10, 2)
+        );
+
+
+
+    # Create Stores Table
+        CREATE TABLE Stores 
+        (
+        store_id INT PRIMARY KEY,
+        store_name VARCHAR(255),
+        x
+        );
+
+
+
+
+    # Create Inventory Table
+        CREATE TABLE Inventory (
+        inventory_id INT PRIMARY KEY,
+        store_id INT,
+        product_id INT,
+        stock_level INT,
+        reorder_level INT,
+        FOREIGN KEY (store_id) REFERENCES Stores(store_id),
+        FOREIGN KEY (product_id) REFERENCES Products(product_id)
+);
+
+
+
+    # Create Sales Table
+       CREATE TABLE Sales (
+       sale_id INT PRIMARY KEY,
+       store_id INT,
+       product_id INT,
+       sale_date DATE,
+       quantity_sold INT,
+       total_amount DECIMAL(10, 2),
+       FOREIGN KEY (store_id) REFERENCES Stores(store_id),
+       FOREIGN KEY (product_id) REFERENCES Products(product_id)
+       );
+
+
+
+    # Create Transactions Table
+        CREATE TABLE Transactions (
+        transaction_id INT PRIMARY KEY,
+        sale_id INT,
+        payment_method VARCHAR(50),
+        transaction_date DATE,
+        FOREIGN KEY (sale_id) REFERENCES Sales(sale_id)
+        );
+
+
+### Solving the business problem by analysing few business related questions
+### 1. Top selling products per store 
+
+    SELECT p.product_id, p.product_name, s.store_id, SUM(s.quantity_sold) AS units_sold,
+    ROW_NUMBER() OVER(PARTITION BY s.store_id ORDER BY SUM(s.quantity_sold) DESC) AS sale_rank
+    FROM products p
+    LEFT JOIN sales s ON p.product_id = s.product_id
+    GROUP BY p.product_id, p.product_name, s.store_id
+    ORDER BY s.store_id, sale_rank;
+
+### 2. Total sales by store
+    SELECT Sales.store_id, Stores.store_name, SUM(Sales.total_amount) AS total_sales
+    FROM Sales
+    JOIN Stores ON Sales.store_id = Stores.store_id
+    GROUP BY store_id, store_name
+    ORDER BY total_sales DESC;
+
+### 3. Sales Trends Over Time to understand the daily sales
+    SELECT sale_date, SUM(total_amount) AS daily_sales
+    FROM Sales
+    GROUP BY sale_date
+    ORDER BY sale_date;
+
+### 4. Profit Analysis for the stores
+    SELECT st.store_name, p.category,  sum(s.total_amount) - sum(p.price * s.quantity_sold) as profit
+    FROM products p
+    LEFT JOIN sales s on p.product_id = s.product_id
+    LEFT JOIN stores st on st.store_id = s.store_id
+GROUP BY s.store_id, st.store_name
+ORDER BY profit DESC;
