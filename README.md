@@ -216,7 +216,7 @@ This relationship indicates that a single product can be part of the inventory i
     GROUP BY store_id, store_name
     ORDER BY total_sales DESC;
 
-<img src="https://github.com/SayaliShende/SQL_Project_store_analysis/blob/main/query_results/Query%202_.png" alt="Entity Relationship Diagram" width="600" height="150">
+<img src="https://github.com/SayaliShende/SQL_Project_store_analysis/blob/main/query_results/Query%202_.png" alt="Entity Relationship Diagram" width="600" height="120">
 
 ### 3. Sales Trends Over Time to understand the daily sales
     SELECT sale_date, SUM(total_amount) AS daily_sales
@@ -225,7 +225,7 @@ This relationship indicates that a single product can be part of the inventory i
     ORDER BY sale_date;
 
 
-<img src="https://github.com/SayaliShende/SQL_Project_store_analysis/blob/main/query_results/Query%203.png" alt="Entity Relationship Diagram" width="500" height="250">
+<img src="https://github.com/SayaliShende/SQL_Project_store_analysis/blob/main/query_results/Query%203.png" alt="Entity Relationship Diagram" width="500" height="200">
 
 ### 4. Profit Analysis for the stores
     SELECT st.store_name, p.category,  sum(s.total_amount) - sum(p.price * s.quantity_sold) as profit
@@ -257,7 +257,7 @@ This relationship indicates that a single product can be part of the inventory i
     GROUP BY payment_method
     ORDER BY total_sales DESC;
 
-<img src="https://github.com/SayaliShende/SQL_Project_store_analysis/blob/main/query_results/query%206.png" alt="Entity Relationship Diagram" width="500" height="180">
+<img src="https://github.com/SayaliShende/SQL_Project_store_analysis/blob/main/query_results/query%206.png" alt="Entity Relationship Diagram" width="500" height="150">
 
 ### Conclusion:
 Relational Database Management Systems (RDBMS) are indispensable for managing modern databases, providing a structured and organized approach that ensures data integrity, security, and scalability. The use of SQL, a powerful query language designed for RDBMS, enables efficient data retrieval, manipulation, and analysis. This capability is crucial for businesses and applications that rely on precise and reliable data, particularly in sectors like finance and retail, where decision-making depends heavily on accurate information.
