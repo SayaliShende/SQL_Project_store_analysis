@@ -35,6 +35,9 @@ o	Compare sales performance across different locations.
 
 •	Transactions: transaction_id, sale_id, payment_method, transaction_date
 
+<img src="https://github.com/SayaliShende/SQL_Project_store_analysis/blob/main/ERD/SQL%20ERD%20PROJECT%20-%20Page%202.png" alt="Entity Relationship Diagram" width="300" height="300">
+
+
 #### Steps to Implement the Project
 
 1.	Requirements Gathering:
@@ -268,3 +271,7 @@ Implementing these recommendations will help XYZ Ltd. better understand customer
 4. Retrived from: MySql Documentation, https://dev.mysql.com/doc/workbench/en/
 
 
+
+
+[https://github.com/SayaliShende/SQL_Project_store_analysis/blob/main/ERD/SQL%20ERD%20PROJECT%20-%20Page%202.png]: https://github.com/SayaliShende/SQL_Project_store_analysis/blob/main/ERD/SQL%20ERD%20PROJECT%20-%20Page%202.png
+[https://github.com/SayaliShende/SQL_Project_store_analysis/blob/main/ERD/SQL%20ERD%20PROJECT%20-%20Page%202.png]: https://github.com/SayaliShende/SQL_Project_store_analysis/blob/main/ERD/SQL%20ERD%20PROJECT%20-%20Page%202.png
