@@ -2,17 +2,17 @@
 The project provides an understanding of relational database management and demonstrate the practical application of SQL in addressing real-world queries related to monitoring and analyzing the sales of newly established mini stores for "XYZ Ltd."
 
 
-#### Project Objective
+### Project Objective
 The aim of this project is to provide an understanding of relational database management and demonstrate the practical application of SQL in addressing real-world queries related to monitoring and analyzing the sales of newly established mini stores for "XYZ Ltd."
 
-#### Business Problem
+### Business Problem
 "XYZ Ltd." is a retail giant operating grocery stores, e-commerce, and departmental stores. The company has recently set up mini stores focusing on groceries, fresh produce, dairy, and poultry items.
 
-#### Objective:
+### Objective:
 The company wants to develop a database to track and monitor the sales of these new mini stores to determine their profitability and inform the management if it is worth continuing to open such stores.
 
 As the designated Database Administrator, your role will be to design, implement, and manage the transaction database for these mini stores, providing insights into their sales performance.
-Project Scope and Features
+### Project Scope and Features
 #### 1.	Database Design:
 o	Design a relational database schema to capture key entities and relationships related to the sales of mini stores.
 o	Key entities include: Products, Stores, Inventory, Sales, and Transactions.
@@ -23,13 +23,18 @@ o	Generate reports on total sales, top-selling products, and sales trends over t
 o	Calculate the profitability of each mini store.
 o	Compare sales performance across different locations.
 
-#### Database Schema
-#### Entities and Relationships:
+### Database Schema: 
+### Entities and Relationships:
 •	Products: product_id, product_name, category, price
+
 •	Stores: store_id, store_name, location
+
 •	Inventory: inventory_id, store_id, product_id, stock_level, reorder_level
+
 •	Sales: sale_id, store_id, product_id, sale_date, quantity_sold, total_amount
+
 •	Transactions: transaction_id, sale_id, payment_method, transaction_date
+
 #### Steps to Implement the Project
 
 1.	Requirements Gathering:
@@ -161,7 +166,7 @@ This relationship indicates that a single product can be part of the inventory i
         reorder_level INT,
         FOREIGN KEY (store_id) REFERENCES Stores(store_id),
         FOREIGN KEY (product_id) REFERENCES Products(product_id)
-);
+       );
 
 
 
@@ -217,5 +222,49 @@ This relationship indicates that a single product can be part of the inventory i
     FROM products p
     LEFT JOIN sales s on p.product_id = s.product_id
     LEFT JOIN stores st on st.store_id = s.store_id
-GROUP BY s.store_id, st.store_name
-ORDER BY profit DESC;
+    GROUP BY s.store_id, st.store_name
+    ORDER BY profit DESC;
+
+### 5. Payment Method Analysis by store
+
+    SELECT Stores.store_id, Transactions.payment_method, COUNT(*) AS transaction_count,
+    SUM(sales.total_amount) AS total_sales,
+    ROW_NUMBER() OVER (PARTITION BY stores.store_id ORDER BY SUM(sales.total_amount) DESC) AS transaction_rank
+    FROM Transactions
+    JOIN Sales ON Transactions.sale_id = Sales.sale_id
+    JOIN Stores ON Sales.store_id = Stores.store_id
+    GROUP BY Stores.store_id, Transactions.payment_method
+    ORDER BY Stores.store_id, transaction_rank;
+
+### 6. Preferred Payment Method Analysis to understand the preferred payment methods
+    SELECT payment_method, COUNT(*) AS transaction_count, SUM(total_amount) AS total_sales
+    FROM Transactions
+    JOIN Sales ON Transactions.sale_id = Sales.sale_id
+    GROUP BY payment_method
+    ORDER BY total_sales DESC;
+
+### Conclusion:
+Relational Database Management Systems (RDBMS) are indispensable for managing modern databases, providing a structured and organized approach that ensures data integrity, security, and scalability. The use of SQL, a powerful query language designed for RDBMS, enables efficient data retrieval, manipulation, and analysis. This capability is crucial for businesses and applications that rely on precise and reliable data, particularly in sectors like finance and retail, where decision-making depends heavily on accurate information.
+
+The analysis of XYZ Ltd.'s mini stores has revealed several key insights. Eggs and apples have emerged as the top-selling products across the stores, indicating a strong customer preference. The Neighbourhood A store stands out as the highest revenue generator, suggesting it has a significant customer base or purchasing power. Initial sales trends for May show positive growth, although a more extended period of data collection is necessary to draw substantial conclusions. Profitability analysis indicates that the stores are currently at break-even, and payment method analysis shows a balanced sales of credit cards, debit cards, and cash across stores with credit cards being the most frequently used transaction method.
+
+### Recommendations:
+1.Product Strategy: Given the high sales of eggs and apples, increase inventory levels for these items and consider targeted promotions to maximize revenue. This focus on popular products can help drive sales and customer satisfaction.
+
+2.Store-Specific Investments: Invest more in marketing and customer experience enhancements at the Neighbourhood A store, which has demonstrated the highest sales performance. This store can serve as a model for other locations, potentially driving overall business growth.
+
+3.Extended Sales Tracking: Continue tracking sales data over a longer period to confirm the positive growth trend observed in May. This will provide a more comprehensive understanding of sales patterns and help in making more informed decisions.
+
+4.Profitability Enhancement: Conduct a detailed analysis to identify cost-saving opportunities and potential revenue increases to move beyond break-even. Consider optimizing inventory management, renegotiating supplier contracts, and enhancing promotional strategies to improve profitability.
+
+5.Payment Method Optimization: Leverage the popularity of credit cards by offering incentives for their use, such as cashback or loyalty points. Ensure efficient processing for all payment methods to maintain high customer satisfaction and streamline transaction processes.
+
+Implementing these recommendations will help XYZ Ltd. better understand customer preferences, optimize operations, and ultimately drive business growth and profitability. Continuous data analysis and informed decision-making will be key to the long-term success of the mini stores.
+
+### References:
+1. Retrieved from: Created in Lucidchart, www.lucidchart.com
+2. Duong, E. (2023). Critical concepts in relational database — Data science journey. Medium. Retrieved June 10, 2024, from https://medium.com/@ethan.duong1120/8-critical-concepts-in-relational-database-80c74aa15e9c 
+3. Retrieved from: Normalization, https://www.studytonight.com/dbms/database-normalization.php
+4. Retrived from: MySql Documentation, https://dev.mysql.com/doc/workbench/en/
+
+
