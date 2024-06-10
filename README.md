@@ -216,7 +216,7 @@ This relationship indicates that a single product can be part of the inventory i
     GROUP BY store_id, store_name
     ORDER BY total_sales DESC;
 
-<img src="https://github.com/SayaliShende/SQL_Project_store_analysis/blob/main/query_results/Query%202_.png" alt="Entity Relationship Diagram" width="600" height="200">
+<img src="https://github.com/SayaliShende/SQL_Project_store_analysis/blob/main/query_results/Query%202_.png" alt="Entity Relationship Diagram" width="600" height="150">
 
 ### 3. Sales Trends Over Time to understand the daily sales
     SELECT sale_date, SUM(total_amount) AS daily_sales
@@ -235,7 +235,7 @@ This relationship indicates that a single product can be part of the inventory i
     GROUP BY s.store_id, st.store_name
     ORDER BY profit DESC;
 
-<img src="https://github.com/SayaliShende/SQL_Project_store_analysis/blob/main/query_results/Query%204.png" alt="Entity Relationship Diagram" width="500" height="150">
+<img src="https://github.com/SayaliShende/SQL_Project_store_analysis/blob/main/query_results/Query%204.png" alt="Entity Relationship Diagram" width="500" height="100">
 
 ### 5. Payment Method Analysis by store
 
