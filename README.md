@@ -16,6 +16,8 @@
 12. [Recommendations](Recommendations)
 13. [References](References)
 
+
+
 The project provides an understanding of relational database management and demonstrate the practical application of SQL in addressing real-world queries related to monitoring and analyzing the sales of newly established mini stores for "XYZ Ltd."
 
 
