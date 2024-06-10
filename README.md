@@ -14,14 +14,17 @@ The company wants to develop a database to track and monitor the sales of these 
 As the designated Database Administrator, your role will be to design, implement, and manage the transaction database for these mini stores, providing insights into their sales performance.
 ### Project Scope and Features
 #### 1.	Database Design:
-o	Design a relational database schema to capture key entities and relationships related to the sales of mini stores.
-o	Key entities include: Products, Stores, Inventory, Sales, and Transactions.
+ Design a relational database schema to capture key entities and relationships related to the sales of mini stores.
+ 
+ Key entities include: Products, Stores, Inventory, Sales, and Transactions.
 #### 2.	Sales Monitoring:
-o	Record sales transactions for mini stores.
-o	Generate reports on total sales, top-selling products, and sales trends over time.
+ Record sales transactions for mini stores.
+
+Generate reports on total sales, top-selling products, and sales trends over time.
 #### 3.	Profitability Analysis:
-o	Calculate the profitability of each mini store.
-o	Compare sales performance across different locations.
+ Calculate the profitability of each mini store.
+ 
+ Compare sales performance across different locations.
 
 ### Database Schema: 
 ### Entities and Relationships:
@@ -64,28 +67,48 @@ Business Objective: The primary goal is to develop a robust database system to t
 
 ### Business Rules
 1.	Product Management:
+
 	 -Each product must have a unique identifier (product_id).
+
 	 -Products are categorized into distinct categories (e.g., groceries, fresh produce, dairy, poultry).
+
 	 -Product prices are stored and can be updated as needed.
 2.	Store Management:
+
 	 -Each mini store must have a unique identifier (store_id).
+
 	 -Stores are identified by their name and location.
+
 3.	Inventory Management:
+
 	 -Inventory levels must be tracked for each product at each store.
+
 	 -Each inventory entry must have a reorder level, which triggers restocking when the stock falls below this level.
+
 	 -Inventory levels are updated with each sale transaction.
 4.	Sales Transactions:
+
 	 -Each sale transaction must have a unique identifier (sale_id).
+
 	 -Sales must be recorded with the date, store_id, product_id, quantity_sold, and total_amount.
+
 	 -Sales transactions must update the inventory levels accordingly.
 5.	Transactions:
+
 	 -Each transaction must have a unique identifier (transaction_id).
+
 	 -Transactions record the payment method and the date of the transaction.
+
 	 -Each transaction is linked to a sale.
+
 6.	Reporting and Analysis:
+
 	 -The system must be able to generate reports on total sales by store, top-selling products, and sales trends over time.
+
 	 -Profitability reports must compare sales revenue against product costs to determine profit margins.
+
 	 -Reports must be generated for different time periods (daily, weekly, monthly).
+
 
 ### Entity-Relationship Diagram (ERD) Analysis
 #### Entities and Attributes:
