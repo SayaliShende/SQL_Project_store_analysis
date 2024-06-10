@@ -35,8 +35,6 @@ o	Compare sales performance across different locations.
 
 •	Transactions: transaction_id, sale_id, payment_method, transaction_date
 
-<img src="https://github.com/SayaliShende/SQL_Project_store_analysis/blob/main/ERD/SQL%20ERD%20PROJECT%20-%20Page%202.png" alt="Entity Relationship Diagram" width="300" height="300">
-
 
 #### Steps to Implement the Project
 
@@ -118,6 +116,8 @@ Business Objective: The primary goal is to develop a robust database system to t
 	sale_id (Foreign Key),
 	payment_method,
 	transaction_date
+
+<img src="https://github.com/SayaliShende/SQL_Project_store_analysis/blob/main/ERD/SQL%20ERD%20PROJECT%20-%20Page%202.png" alt="Entity Relationship Diagram" width="700" height="500">
 
 ### ERD Relationships:
 #### 1.	Store to Sales (One-to-Many Relationship): 
