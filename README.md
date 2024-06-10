@@ -1,20 +1,20 @@
 # NEW_STORE_ANALYSIS_FOR_RETAIL_GIANT_XYZltd.
 
 ### Contents
-1. [Project Objective](project-objective)
-2. [Business Problem](Business-Problem)
-3. [Business Objective](Business-Objective)
-4. [Project Scope and Features](Project-Scope-and-Features)
-5. [Database Schema](Database-Schema)
-6. [Business Understanding](Business-Understanding)
-7. [Business Rules](Business-Rules)
-8. [Entity-Relationship Diagram](Entity-Relationship-Diagram)
-9. [Designing a Database schema using MySql](Designing-a-Database-schema-using-MySql)
+1. [Project Objective](#1-project-objective)
+2. [Business Problem](#2-business-problem)
+3. [Business Objective](#3-business-objective)
+4. [Project Scope and Features](#4-project-scope-and-features)
+5. [Database Schema](#5-database-schema)
+6. [Business Understanding](#6-business-understanding)
+7. [Business Rules](#7-business-rules)
+8. [Entity-Relationship Diagram](#8-entity-relationship-diagram-erd-analysis)
+9. [Designing a Database schema using MySql](#9-designing-a-database-schema-using-mysql)
 
-10. [Business Problems analysis](Business-Problems-analysis)
-11. [Conclusion](Conclusion)
-12. [Recommendations](Recommendations)
-13. [References](References)
+10. [Business Problems analysis](#10-business-problems-analysis)
+11. [Conclusion](#11-conclusion)
+12. [Recommendations](#12-recommendations)
+13. [References](#13references)
 
 
 
